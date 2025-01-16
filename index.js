@@ -17,5 +17,6 @@ const server = createServer((req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-server.listen(port);
-console.info("listening on port", port);
+const host = process.env.HOST || "127.0.0.1";
+server.listen(port, host);
+console.info(`listening on http://${host}:${port}`);
